@@ -58,10 +58,10 @@ function removeData(id){
         return value.id != id; 
     });
 
-    // save array into localstorage
+    // guardar array dentro de localstorage
     localStorage.setItem('listItem', JSON.stringify(contactList))
 
-    //get data again
+    //obtener datos nuevos
     allData()
 }
 
@@ -71,8 +71,8 @@ function save(){
     //debemos usar JSON.parse, porque los datos como cadena, necesitamos convertirlos en array
     contactList = JSON.parse(localStorage.getItem('listItem')) ?? []
 
-    //get last array to get last id
-    //and store it into variable id
+    //obtener el última array para obtener la última id
+    //y guárdarlo en la id de la variable
     var id
     contactList.length != 0 ? contactList.findLast((item) => id = item.id) : id = 0
 
