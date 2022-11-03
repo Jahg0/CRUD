@@ -67,6 +67,10 @@ function removeData(id){
 
 //método para guardar datos en localstorage
 function save(){
+            
+    if(value.name == '' | value.age == '' | value.address == '' | value.phone == ''){
+        return;
+    }
     //obtener datos del almacenamiento local y almacenarlos en el array de contactos
     //debemos usar JSON.parse, porque los datos como cadena, necesitamos convertirlos en array
     contactList = JSON.parse(localStorage.getItem('listItem')) ?? []
